@@ -7,6 +7,8 @@
 #include "TSystem.h"
 #include "TTree.h"
 #include "TCanvas.h"
+#include "TROOT.h"
+#include "TStyle.h"
 
 #if !defined(__CINT__) || defined(__MAKECINT__)
 #include "WCSimRootEvent.hh"
@@ -28,8 +30,8 @@ TString create_filename(const char * prefix, TString& filename_string)
 int sample_readfile(char *filename=NULL, bool verbose=false, bool save_hists=false)
 {
   // Clear global scope
-  //gROOT->Reset();
-  /*
+  gROOT->Reset();
+  
   gStyle->SetOptStat(0);
   gStyle->SetCanvasColor(0);
   gStyle->SetTitleColor(1);
@@ -58,7 +60,7 @@ int sample_readfile(char *filename=NULL, bool verbose=false, bool save_hists=fal
   gStyle->SetTitleSize(0.04,"Y");
   gStyle->SetTitleBorderSize(0);
   gStyle->SetCanvasBorderMode(0);
-  */
+  
 #if !defined(__MAKECINT__)
   // Load the library with class dictionary info
   // (create with "gmake shared")

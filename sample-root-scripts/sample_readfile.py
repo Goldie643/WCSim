@@ -3,7 +3,7 @@ from ROOT import TFile, TH1F, TTree, TCanvas
 import os.path
 import sys
 
-# Simple example of reading a generated Root file
+ Simple example of reading a generated Root file
 
 def sample_readfile(filename = "../wcsim.root", verbose=False):
     #Clear global scope
